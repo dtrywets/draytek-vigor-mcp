@@ -1,0 +1,20 @@
+[project]
+name = "draytek-vigor-mcp"
+version = "0.1.0"
+description = "MCP server for DrayTek Vigor 167 DSL diagnostics via SSH"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "paramiko>=3.4.0",
+]
+
+[tool.setuptools]
+py-modules = ["server", "vigor_ssh", "discover"]
+
+[project.scripts]
+draytek-vigor-mcp = "server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
